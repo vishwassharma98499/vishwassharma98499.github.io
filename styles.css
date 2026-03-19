@@ -438,6 +438,66 @@ nav.scrolled {
   animation: fadeUp 0.8s var(--ease-out) 0.8s forwards;
 }
 
+/* Hero two-column layout */
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-portrait {
+  flex-shrink: 0;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 0.6s forwards;
+}
+
+.portrait-wrapper {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+
+.portrait-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  border: 3px solid var(--border);
+  transition: border-color 0.4s ease;
+}
+
+.portrait-wrapper:hover img {
+  border-color: var(--accent);
+}
+
+.portrait-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  opacity: 0.3;
+  transition: opacity 0.4s ease, transform 0.6s var(--ease-out);
+  animation: portraitSpin 20s linear infinite;
+  border-style: dashed;
+}
+
+.portrait-wrapper:hover .portrait-ring {
+  opacity: 0.6;
+  transform: scale(1.03);
+}
+
+@keyframes portraitSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -1280,6 +1340,25 @@ footer p {
   .hero-metrics {
     gap: 1.5rem;
     flex-wrap: wrap;
+  }
+
+  .hero-content {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-tag {
+    justify-content: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .portrait-wrapper {
+    width: 180px;
+    height: 180px;
   }
 
   .contact-grid {
