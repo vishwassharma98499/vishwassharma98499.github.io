@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vishwas Sharma — Senior Backend & AI Engineer</title>
+  <title>Vishwas Sharma — Senior Backend & AI Engineer | Munich, Germany</title>
   <meta name="description"
     content="Senior Backend Engineer with 7+ years of experience in Python, AWS, Kubernetes, and AI/ML. Based in Munich, Germany.">
   <meta name="keywords"
@@ -16,21 +16,67 @@
   <meta property="og:url" content="https://vishwassharma98499.github.io/">
   <meta property="og:image" content="https://vishwassharma98499.github.io/assets/og-image.png">
   <link rel="canonical" href="https://vishwassharma98499.github.io/">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured Data for German recruiters -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vishwas Sharma",
+    "jobTitle": "Senior Backend & AI Engineer",
+    "url": "https://vishwassharma98499.github.io/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Munich",
+      "addressCountry": "DE"
+    },
+    "knowsLanguage": ["en", "de"],
+    "sameAs": [
+      "https://www.linkedin.com/in/vishwas-sharma-profile/",
+      "https://github.com/vishwassharma98499"
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
+  <!-- ═══════ PARTICLE CANVAS ═══════ -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ═══════ FLOATING 3D SHAPES ═══════ -->
+  <div class="floating-shapes" id="floatingShapes" aria-hidden="true">
+    <div class="float-shape shape-1"></div>
+    <div class="float-shape shape-2"></div>
+    <div class="float-shape shape-3"></div>
+    <div class="float-shape shape-4"></div>
+    <div class="float-shape shape-5"></div>
+    <div class="float-shape shape-6"></div>
+  </div>
+
+  <!-- ═══════ SCROLL BACKGROUND EFFECTS ═══════ -->
+  <div class="scroll-bg" id="scrollBg">
+    <div class="scroll-orb scroll-orb-1"></div>
+    <div class="scroll-orb scroll-orb-2"></div>
+    <div class="scroll-orb scroll-orb-3"></div>
+    <div class="scroll-grid"></div>
+  </div>
+
   <!-- ═══════ NAVIGATION ═══════ -->
   <nav id="navbar">
     <div class="nav-inner">
-      <a href="#" class="nav-brand">Vishwas Sharma</a>
+      <a href="#" class="nav-brand">
+        <span class="brand-icon">VS</span>
+        Vishwas Sharma
+      </a>
       <div class="nav-right">
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
@@ -61,9 +107,26 @@
 
   <!-- ═══════ HERO ═══════ -->
   <section class="hero" id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-text">
+          <!-- Compact avatar pill — top-left, scrolls naturally with content -->
+          <div class="avatar-pill">
+            <div class="avatar-img">
+              <img src="assets/profile.jpg" alt="Vishwas Sharma"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="avatar-fallback" style="display:none;">VS</div>
+            </div>
+            <div class="avatar-info">
+              <span class="avatar-name">Vishwas Sharma</span>
+              <span class="avatar-loc"><span class="status-pulse"></span> Munich, Germany</span>
+            </div>
+          </div>
+
           <div class="hero-tag">
             <span class="dot"></span> Open to new opportunities
           </div>
@@ -79,41 +142,42 @@
           </p>
           <div class="hero-actions">
             <a href="#contact" class="btn-primary">
-              <span>→</span> Let's Talk
+              <span class="btn-icon">→</span> Let's Talk
             </a>
             <a href="assets/Vishwas_Sharma_Resume.pdf" download class="btn-ghost">
-              ↓ Download CV
+              <span class="btn-icon">↓</span> Download CV
             </a>
             <a href="#projects" class="btn-ghost">
               View Projects
             </a>
           </div>
         </div>
-        <div class="hero-portrait">
-          <div class="portrait-wrapper">
-            <img src="assets/profile.jpg" alt="Vishwas Sharma" loading="eager"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="portrait-fallback" style="display:none;">VS</div>
-            <div class="portrait-ring"></div>
-          </div>
-        </div>
       </div>
       <div class="hero-metrics">
         <div class="metric">
-          <h3>7+</h3>
+          <h3 class="counter" data-target="7">0</h3>
+          <span class="metric-plus">+</span>
           <p>Years Experience</p>
         </div>
         <div class="metric">
-          <h3>7</h3>
+          <h3 class="counter" data-target="7">0</h3>
           <p>Certifications</p>
         </div>
         <div class="metric">
           <h3>AWS</h3>
           <p>K8s · Docker · AI/ML</p>
         </div>
+        <div class="metric">
+          <h3>B2</h3>
+          <p>German · EU Work Permit</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <div class="section-glow">
+    <div class="section-glow-orb section-glow-left"></div>
+  </div>
 
   <!-- ═══════ EXPERTISE ═══════ -->
   <section id="expertise">
@@ -124,17 +188,28 @@
         End-to-end ownership from architecture through deployment, monitoring, and operations.
       </p>
       <div class="expertise-grid">
-        <div class="expertise-card reveal">
-          <div class="expertise-icon">⚙️</div>
+        <div class="expertise-card tilt-card reveal">
+          <div class="expertise-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
           <h3>Software Engineering</h3>
-          <p>Designing robust, scalable APIs, microservices, and full-stack applications. Clean architecture with observability, reliability, and
-            graceful failure handling.</p>
+          <p>Designing robust, scalable APIs, microservices, and full-stack applications. Clean architecture with
+            observability, reliability, and graceful failure handling.</p>
           <div class="expertise-tags">
             <span>Python</span><span>Node.js</span><span>C++</span><span>Java</span><span>React</span><span>TCL</span><span>REST</span>
           </div>
         </div>
-        <div class="expertise-card reveal">
-          <div class="expertise-icon">☁️</div>
+        <div class="expertise-card tilt-card reveal">
+          <div class="expertise-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+            </svg>
+          </div>
           <h3>Cloud & Infrastructure</h3>
           <p>Production deployments on AWS and Kubernetes. Infrastructure-as-code, CI/CD pipelines, and containerised
             workloads at scale.</p>
@@ -142,17 +217,30 @@
             <span>AWS</span><span>Kubernetes</span><span>Docker</span><span>Terraform</span><span>Jenkins</span>
           </div>
         </div>
-        <div class="expertise-card reveal">
-          <div class="expertise-icon">🧠</div>
+        <div class="expertise-card tilt-card reveal">
+          <div class="expertise-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93L12 22l-.75-12.07A4.001 4.001 0 0 1 12 2z"></path>
+              <circle cx="12" cy="6" r="1"></circle>
+            </svg>
+          </div>
           <h3>AI / ML & LLMs</h3>
           <p>Building RAG pipelines, integrating LLM services, and deploying AI copilots on specialised hardware.
             Production-ready ML systems.</p>
           <div class="expertise-tags">
-            <span>LangChain</span><span>RAG</span><span>HuggingFace</span><span>PyTorch</span><span>TensorFlow</span><span>LLMs</span><span>NLP</span><span>Computer Vision</span>
+            <span>LangChain</span><span>RAG</span><span>HuggingFace</span><span>PyTorch</span><span>TensorFlow</span><span>LLMs</span><span>NLP</span><span>CV</span>
           </div>
         </div>
-        <div class="expertise-card reveal">
-          <div class="expertise-icon">🗄️</div>
+        <div class="expertise-card tilt-card reveal">
+          <div class="expertise-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+            </svg>
+          </div>
           <h3>Databases & Data</h3>
           <p>Relational and vector databases for diverse workloads. Caching layers, data pipelines, and optimised query
             patterns.</p>
@@ -160,10 +248,18 @@
             <span>MySQL</span><span>Redis</span><span>ChromaDB</span>
           </div>
         </div>
-        <div class="expertise-card reveal">
-          <div class="expertise-icon">🔧</div>
+        <div class="expertise-card tilt-card reveal">
+          <div class="expertise-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+              </path>
+            </svg>
+          </div>
           <h3>CAD & Engineering Tools</h3>
-          <p>Deep experience with enterprise CAD platforms and simulation tools for automotive and aerospace engineering workflows.</p>
+          <p>Deep experience with enterprise CAD platforms and simulation tools for automotive and aerospace engineering
+            workflows.</p>
           <div class="expertise-tags">
             <span>CATIA V5</span><span>3DExperience</span><span>Hyperworks</span><span>NVIDIA Omniverse</span>
           </div>
@@ -173,7 +269,7 @@
   </section>
 
   <!-- ═══════ EXPERIENCE ═══════ -->
-  <section id="experience" style="background: var(--bg-elevated);">
+  <section id="experience">
     <div class="section-inner">
       <div class="section-label">Career</div>
       <h2 class="section-title reveal">Experience</h2>
@@ -184,90 +280,115 @@
 
         <!-- Accenture -->
         <div class="timeline-item reveal">
-          <div class="timeline-header">
-            <h3>Accenture</h3>
-            <span class="role-badge">Senior Software Engineer</span>
-          </div>
-          <div class="timeline-meta">
-            <span>📍 Munich, Germany</span>
-            <span>📅 Mar 2022 — Present</span>
-          </div>
-
-          <div class="project-block">
-            <h4>Glodd — Gen AI Copilot (Local LLM)</h4>
-            <ul>
-              <li>Architected end-to-end backend services for a production AI copilot with clean RESTful APIs designed
-                for reliability and observability</li>
-              <li>Integrated multiple external systems and LLM services via well-defined API boundaries, handling
-                partial data, retries, and graceful failure modes</li>
-              <li>Implemented a RAG pipeline using LangChain optimised for low-latency on Intel Gaudi 2 with HuggingFace
-                TGI/TEI</li>
-              <li>Orchestrated deployment on Kubernetes with Docker, ensuring reliability under load</li>
-              <li>Managed IaC and CI/CD for automated, consistent delivery</li>
-            </ul>
-            <div class="project-tech">
-              <span>Python</span><span>Node.js</span><span>Nginx</span><span>Redis</span><span>Docker</span><span>K8s</span><span>LangChain</span><span>Intel Gaudi 2</span>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card tilt-card">
+            <div class="timeline-header">
+              <h3>Accenture</h3>
+              <span class="role-badge">Senior Software Engineer</span>
             </div>
-          </div>
-
-          <div class="project-block">
-            <h4>Semiconductor Factory Layout Optimiser</h4>
-            <ul>
-              <li>Designed an A* search algorithm for real-time route optimisation between pipe systems</li>
-              <li>Built custom bin packing algorithm for constraint-based placement of factory assets</li>
-              <li>Created microservice architecture with GPU support for real-time complex optimisation</li>
-              <li>Integrated with NVIDIA Omniverse for real-time 3D visualisation</li>
-            </ul>
-            <div class="project-tech">
-              <span>Python</span><span>NVIDIA Omniverse</span><span>Docker</span><span>K8s</span><span>DSA</span>
+            <div class="timeline-meta">
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg> Munich, Germany</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg> Mar 2022 — Present</span>
             </div>
-          </div>
 
-          <div class="project-block">
-            <h4>Airbus — Insulation Blanket Tool & Rainbow Framework</h4>
-            <ul>
-              <li>Developed CATIA V5 add-in with 3D-to-2D geometry conversion algorithms in C++</li>
-              <li>Architected configurator for Airbus A350 Freighter tool deployment</li>
-              <li>Implemented sorting algorithms for 3D stress model elements per specification requirements</li>
-            </ul>
-            <div class="project-tech">
-              <span>C++</span><span>Java</span><span>CATIA V5</span><span>Hyperworks</span><span>Python</span><span>TCL</span>
+            <div class="project-block">
+              <h4>Glodd — Gen AI Copilot (Local LLM)</h4>
+              <ul>
+                <li>Architected end-to-end backend services for a production AI copilot with clean RESTful APIs designed
+                  for reliability and observability</li>
+                <li>Integrated multiple external systems and LLM services via well-defined API boundaries, handling
+                  partial data, retries, and graceful failure modes</li>
+                <li>Implemented a RAG pipeline using LangChain optimised for low-latency on Intel Gaudi 2 with
+                  HuggingFace
+                  TGI/TEI</li>
+                <li>Orchestrated deployment on Kubernetes with Docker, ensuring reliability under load</li>
+                <li>Managed IaC and CI/CD for automated, consistent delivery</li>
+              </ul>
+              <div class="project-tech">
+                <span>Python</span><span>Node.js</span><span>Nginx</span><span>Redis</span><span>Docker</span><span>K8s</span><span>LangChain</span><span>Intel
+                  Gaudi 2</span>
+              </div>
+            </div>
+
+            <div class="project-block">
+              <h4>Semiconductor Factory Layout Optimiser</h4>
+              <ul>
+                <li>Designed an A* search algorithm for real-time route optimisation between pipe systems</li>
+                <li>Built custom bin packing algorithm for constraint-based placement of factory assets</li>
+                <li>Created microservice architecture with GPU support for real-time complex optimisation</li>
+                <li>Integrated with NVIDIA Omniverse for real-time 3D visualisation</li>
+              </ul>
+              <div class="project-tech">
+                <span>Python</span><span>NVIDIA Omniverse</span><span>Docker</span><span>K8s</span><span>DSA</span>
+              </div>
+            </div>
+
+            <div class="project-block">
+              <h4>Airbus — Insulation Blanket Tool & Rainbow Framework</h4>
+              <ul>
+                <li>Developed CATIA V5 add-in with 3D-to-2D geometry conversion algorithms in C++</li>
+                <li>Architected configurator for Airbus A350 Freighter tool deployment</li>
+                <li>Implemented sorting algorithms for 3D stress model elements per specification requirements</li>
+              </ul>
+              <div class="project-tech">
+                <span>C++</span><span>Java</span><span>CATIA
+                  V5</span><span>Hyperworks</span><span>Python</span><span>TCL</span>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Technia -->
         <div class="timeline-item reveal">
-          <div class="timeline-header">
-            <h3>Technia (Addnode Group)</h3>
-            <span class="role-badge">Application Developer</span>
-          </div>
-          <div class="timeline-meta">
-            <span>📍 Pune, India</span>
-            <span>📅 Jul 2018 — Dec 2021</span>
-          </div>
-
-          <div class="project-block">
-            <h4>Honda K6V6 — 3DEXPERIENCE Migration</h4>
-            <ul>
-              <li>Migrated Honda PDM system from CATIA V5 to cloud-based 3DExperience platform</li>
-              <li>Owned feature development for configuration management (evolution & effectivity)</li>
-              <li>Used C++ JSON parser module for input attributes on product structures</li>
-            </ul>
-            <div class="project-tech">
-              <span>C++</span><span>Java</span><span>3DExperience</span><span>JSON</span><span>Bitbucket</span>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card tilt-card">
+            <div class="timeline-header">
+              <h3>Technia (Addnode Group)</h3>
+              <span class="role-badge">Application Developer</span>
             </div>
-          </div>
+            <div class="timeline-meta">
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg> Pune, India</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg> Jul 2018 — Dec 2021</span>
+            </div>
 
-          <div class="project-block">
-            <h4>xCompare & Automated Test Suite</h4>
-            <ul>
-              <li>Developed CAD comparison tool features and version control pipeline</li>
-              <li>Built an automation suite for regression testing (HTML, XML, image comparison via NumPy)</li>
-              <li>Deployed on Jenkins for continuous integration</li>
-            </ul>
-            <div class="project-tech">
-              <span>C++</span><span>Python</span><span>Jenkins</span><span>NumPy</span><span>HTML/CSS</span>
+            <div class="project-block">
+              <h4>Honda K6V6 — 3DEXPERIENCE Migration</h4>
+              <ul>
+                <li>Migrated Honda PDM system from CATIA V5 to cloud-based 3DExperience platform</li>
+                <li>Owned feature development for configuration management (evolution & effectivity)</li>
+                <li>Used C++ JSON parser module for input attributes on product structures</li>
+              </ul>
+              <div class="project-tech">
+                <span>C++</span><span>Java</span><span>3DExperience</span><span>JSON</span><span>Bitbucket</span>
+              </div>
+            </div>
+
+            <div class="project-block">
+              <h4>xCompare & Automated Test Suite</h4>
+              <ul>
+                <li>Developed CAD comparison tool features and version control pipeline</li>
+                <li>Built an automation suite for regression testing (HTML, XML, image comparison via NumPy)</li>
+                <li>Deployed on Jenkins for continuous integration</li>
+              </ul>
+              <div class="project-tech">
+                <span>C++</span><span>Python</span><span>Jenkins</span><span>NumPy</span><span>HTML/CSS</span>
+              </div>
             </div>
           </div>
         </div>
@@ -287,12 +408,10 @@
       <div class="projects-grid" id="projectsGrid">
 
         <a href="https://github.com/vishwassharma98499/hivecore" target="_blank" rel="noopener"
-          class="project-card reveal" style="text-decoration:none; color:inherit;">
+          class="project-card tilt-card reveal" style="text-decoration:none; color:inherit;">
           <div class="project-card-header">
             <span class="icon">🐝</span>
-            <div class="project-card-links">
-              <span>GitHub ↗</span>
-            </div>
+            <div class="project-card-links"><span>GitHub ↗</span></div>
           </div>
           <h3>HiveCore</h3>
           <p>Multi-tenant AI agent platform with secure auth and RAG. Users create personalised knowledge bases, chat
@@ -303,12 +422,10 @@
         </a>
 
         <a href="https://github.com/vishwassharma98499/ragstack" target="_blank" rel="noopener"
-          class="project-card reveal" style="text-decoration:none; color:inherit;">
+          class="project-card tilt-card reveal" style="text-decoration:none; color:inherit;">
           <div class="project-card-header">
             <span class="icon">📚</span>
-            <div class="project-card-links">
-              <span>GitHub ↗</span>
-            </div>
+            <div class="project-card-links"><span>GitHub ↗</span></div>
           </div>
           <h3>RAGStack</h3>
           <p>Local RAG chatbot over PDFs with multi-LLM support, authentication, and streaming UI. Full-stack with
@@ -319,12 +436,10 @@
         </a>
 
         <a href="https://github.com/vishwassharma98499/local-llm-rag-gollama" target="_blank" rel="noopener"
-          class="project-card reveal" style="text-decoration:none; color:inherit;">
+          class="project-card tilt-card reveal" style="text-decoration:none; color:inherit;">
           <div class="project-card-header">
             <span class="icon">🦙</span>
-            <div class="project-card-links">
-              <span>GitHub ↗</span>
-            </div>
+            <div class="project-card-links"><span>GitHub ↗</span></div>
           </div>
           <h3>GoLlama</h3>
           <p>Build and run LLMs locally using Go. A lightweight approach to local inference and RAG without heavy Python
@@ -334,7 +449,6 @@
           </div>
         </a>
 
-        <!-- Placeholder for future projects -->
         <div class="project-card project-card-placeholder reveal">
           <div class="plus">+</div>
           <p>More projects coming soon</p>
@@ -345,57 +459,69 @@
   </section>
 
   <!-- ═══════ CERTIFICATIONS ═══════ -->
-  <section id="certifications" style="background: var(--bg-elevated);">
+  <section id="certifications">
     <div class="section-inner">
       <div class="section-label">Credentials</div>
       <h2 class="section-title reveal">Certifications</h2>
       <p class="section-desc reveal">
-        Industry-recognised certifications across cloud, infrastructure, and AI.
+        Industry-recognised certifications across cloud, infrastructure, and AI — all verifiable.
       </p>
       <div class="certs-grid">
-        <div class="cert-card reveal">
+        <a href="https://www.credly.com/org/the-linux-foundation/badge/ckad-certified-kubernetes-application-developer"
+          target="_blank" rel="noopener" class="cert-card cert-card-link tilt-card reveal">
           <div class="cert-badge">☸️</div>
           <div class="cert-info">
             <h4>Kubernetes CKAD</h4>
             <p>The Linux Foundation</p>
+            <span class="cert-verify">Verify on Credly ↗</span>
           </div>
-        </div>
-        <div class="cert-card reveal">
+        </a>
+        <a href="https://www.credly.com/org/amazon-web-services/badge/aws-certified-machine-learning-engineer-associate"
+          target="_blank" rel="noopener" class="cert-card cert-card-link tilt-card reveal">
           <div class="cert-badge">🤖</div>
           <div class="cert-info">
             <h4>AWS ML Engineer — Associate</h4>
             <p>Amazon Web Services</p>
+            <span class="cert-verify">Verify on Credly ↗</span>
           </div>
-        </div>
-        <div class="cert-card reveal">
+        </a>
+        <a href="https://www.credly.com/org/amazon-web-services/badge/aws-certified-solutions-architect-associate"
+          target="_blank" rel="noopener" class="cert-card cert-card-link tilt-card reveal">
           <div class="cert-badge">☁️</div>
           <div class="cert-info">
             <h4>AWS Solutions Architect — Associate</h4>
             <p>Amazon Web Services</p>
+            <span class="cert-verify">Verify on Credly ↗</span>
           </div>
-        </div>
-        <div class="cert-card reveal">
+        </a>
+        <a href="https://www.credly.com/org/amazon-web-services/badge/aws-certified-ai-practitioner" target="_blank"
+          rel="noopener" class="cert-card cert-card-link tilt-card reveal">
           <div class="cert-badge">🧠</div>
           <div class="cert-info">
             <h4>AWS AI Practitioner</h4>
             <p>Amazon Web Services</p>
+            <span class="cert-verify">Verify on Credly ↗</span>
           </div>
-        </div>
-        <div class="cert-card reveal">
+        </a>
+        <a href="https://www.credly.com/org/hashicorp/badge/terraform-associate-003" target="_blank" rel="noopener"
+          class="cert-card cert-card-link tilt-card reveal">
           <div class="cert-badge">🏗️</div>
           <div class="cert-info">
             <h4>Terraform Associate (003)</h4>
             <p>HashiCorp</p>
+            <span class="cert-verify">Verify on Credly ↗</span>
           </div>
-        </div>
-        <div class="cert-card reveal">
+        </a>
+        <a href="https://www.credly.com/org/amazon-web-services/badge/aws-partner-accreditation-technical"
+          target="_blank" rel="noopener" class="cert-card cert-card-link tilt-card reveal">
           <div class="cert-badge">🤝</div>
           <div class="cert-info">
             <h4>AWS Partner Technical Accredited</h4>
             <p>Amazon Web Services</p>
+            <span class="cert-verify">Verify on Credly ↗</span>
           </div>
-        </div>
-        <div class="cert-card reveal">
+        </a>
+        <div class="cert-card tilt-card reveal">
           <div class="cert-badge">💬</div>
           <div class="cert-info">
             <h4>ChatGPT Prompt Engineering</h4>
@@ -415,13 +541,13 @@
         Academic foundation and language proficiency.
       </p>
 
-      <div class="education-card reveal">
+      <div class="education-card tilt-card reveal">
         <div class="education-icon">🎓</div>
         <div class="education-details">
           <h3>Bachelor of Technology</h3>
           <p class="edu-school">SRM University, Delhi, India</p>
           <div class="edu-meta">
-            <span>📅 Jul 2014 — Jun 2018</span>
+            <span>Jul 2014 — Jun 2018</span>
           </div>
         </div>
       </div>
@@ -473,10 +599,9 @@
                 <strong>vishwassharma98499</strong>
               </div>
             </a>
-
           </div>
         </div>
-        <div class="availability-card">
+        <div class="availability-card tilt-card">
           <h3><span class="status-dot"></span> Current Status</h3>
           <p>I'm open to senior backend engineering and AI/ML engineering roles. I value well-structured teams, real
             technical challenges, and the opportunity to build products that matter.</p>
@@ -487,7 +612,7 @@
             </div>
             <div class="detail">
               <span class="label">Languages</span>
-              <span class="value">English, German (B2)</span>
+              <span class="value">English, Deutsch (B1)</span>
             </div>
             <div class="detail">
               <span class="label">Work Permit</span>
@@ -508,6 +633,7 @@
     <p>&copy; 2026 Vishwas Sharma. Crafted in Munich.</p>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="script.js"></script>
 </body>
 
