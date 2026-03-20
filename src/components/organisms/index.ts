@@ -1,0 +1,13 @@
+export { ParticleCanvas } from "./ParticleCanvas";
+export { FloatingShapes } from "./FloatingShapes";
+export { ScrollBackground } from "./ScrollBackground";
+export { ThreeHero } from "./ThreeHero";
+export { Navbar } from "./Navbar";
+export { HeroSection } from "./HeroSection";
+export { ExpertiseSection } from "./ExpertiseSection";
+export { ExperienceSection } from "./ExperienceSection";
+export { ProjectsSection } from "./ProjectsSection";
+export { CertificationsSection } from "./CertificationsSection";
+export { EducationSection } from "./EducationSection";
+export { ContactSection } from "./ContactSection";
+export { Footer } from "./Footer";
