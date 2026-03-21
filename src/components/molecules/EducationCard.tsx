@@ -12,18 +12,8 @@ export function EducationCard({ education }: EducationCardProps) {
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
       onMouseMove={onMouseMove}
-      onMouseLeave={(e) => {
-        onMouseLeave();
-        e.currentTarget.style.borderColor = "var(--border)";
-        e.currentTarget.style.boxShadow = "none";
-        e.currentTarget.style.background = "var(--bg-card)";
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "var(--border-hover)";
-        e.currentTarget.style.background = "var(--bg-card-hover)";
-        e.currentTarget.style.boxShadow = "var(--shadow-card)";
-      }}
-      className="tilt-card flex items-start gap-6 max-w-[600px] rounded-[14px] border p-8 backdrop-blur-[12px] transition-all duration-400 max-md:flex-col max-md:gap-4"
+      onMouseLeave={onMouseLeave}
+      className="tilt-card hover-bg flex items-start gap-6 max-w-[600px] rounded-[14px] border p-8 backdrop-blur-[12px] transition-all duration-400 max-md:flex-col max-md:gap-4"
       style={{
         background: "var(--bg-card)",
         borderColor: "var(--border)",

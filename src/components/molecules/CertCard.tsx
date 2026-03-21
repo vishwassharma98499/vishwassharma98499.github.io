@@ -18,20 +18,8 @@ export function CertCard({ cert }: CertCardProps) {
       {...linkProps}
       ref={ref as React.RefObject<HTMLAnchorElement & HTMLDivElement>}
       onMouseMove={onMouseMove}
-      onMouseLeave={(e: React.MouseEvent<HTMLElement>) => {
-        onMouseLeave();
-        e.currentTarget.style.borderColor = "var(--border)";
-        e.currentTarget.style.boxShadow = "none";
-        e.currentTarget.style.background = "var(--bg-card)";
-      }}
-      onMouseEnter={(e: React.MouseEvent<HTMLElement>) => {
-        e.currentTarget.style.borderColor = cert.verifyUrl
-          ? "var(--accent)"
-          : "var(--border-hover)";
-        e.currentTarget.style.boxShadow = "var(--shadow-card)";
-        e.currentTarget.style.background = "var(--bg-card-hover)";
-      }}
-      className="tilt-card flex items-start gap-4 rounded-xl border p-5 backdrop-blur-[12px] transition-all duration-400"
+      onMouseLeave={onMouseLeave}
+      className="tilt-card hover-bg flex items-start gap-4 rounded-xl border p-5 backdrop-blur-[12px] transition-all duration-400"
       style={{
         background: "var(--bg-card)",
         borderColor: "var(--border)",

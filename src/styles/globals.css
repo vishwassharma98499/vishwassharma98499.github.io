@@ -21,7 +21,7 @@
   --bg-card-hover: rgba(20, 24, 40, 0.8);
   --text-primary: #e8e6f0;
   --text-secondary: #8b89a0;
-  --text-muted: #55536b;
+  --text-muted: #7d7b95;
   --accent: #7c6cf0;
   --accent-secondary: #5eead4;
   --accent-glow: rgba(124, 108, 240, 0.25);
@@ -56,7 +56,7 @@
   --bg-card-hover: rgba(255, 255, 255, 0.95);
   --text-primary: #1a1428;
   --text-secondary: #5c5570;
-  --text-muted: #8a849a;
+  --text-muted: #6e6886;
   --accent: #5b4dc7;
   --accent-secondary: #0d9488;
   --accent-glow: rgba(91, 77, 199, 0.2);
@@ -84,6 +84,14 @@
 }
 
 /* ═══════ BASE ═══════ */
+
+/* Mobile nav overlay background */
+@media (max-width: 767px) {
+  .max-md\:fixed[style] {
+    background: var(--mobile-bg, var(--bg-elevated));
+    border-color: var(--mobile-border, var(--border));
+  }
+}
 
 html {
   scroll-behavior: smooth;
@@ -119,6 +127,12 @@ body {
 
 /* ═══════ GRADIENT TEXT UTILITY ═══════ */
 
+/* ExpertiseCard icon hover (bg and border need CSS vars) */
+.group:hover .group-hover\:shadow-\[0_4px_20px_var\(--accent-glow\)\] {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
 .gradient-text {
   background: var(--gradient-warm);
   -webkit-background-clip: text;
@@ -133,7 +147,35 @@ body {
   transition:
     transform 0.4s var(--ease-out),
     box-shadow 0.4s var(--ease-out),
-    border-color 0.4s;
+    border-color 0.4s,
+    background 0.4s;
+}
+
+/* Reusable card hover: border glow + shadow */
+.tilt-card:hover,
+.hover-card:hover {
+  border-color: var(--border-hover) !important;
+  box-shadow: var(--shadow-card);
+}
+
+/* Accent-border hover variant */
+.hover-accent:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Card background hover variant */
+.hover-bg:hover {
+  background: var(--bg-card-hover) !important;
+}
+
+/* Translate-x hover for contact links */
+.hover-slide:hover {
+  transform: translateX(4px);
+  color: var(--text-primary) !important;
+  border-color: var(--accent) !important;
+  background: var(--accent-subtle) !important;
+  box-shadow: 0 4px 20px var(--accent-glow);
 }
 
 /* ═══════ STATUS PULSE ═══════ */

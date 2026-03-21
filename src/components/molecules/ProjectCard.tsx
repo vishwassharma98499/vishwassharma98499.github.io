@@ -16,15 +16,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       rel="noopener noreferrer"
       ref={ref as React.RefObject<HTMLAnchorElement>}
       onMouseMove={onMouseMove}
-      onMouseLeave={(e) => {
-        onMouseLeave();
-        e.currentTarget.style.borderColor = "var(--border)";
-        e.currentTarget.style.boxShadow = "none";
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "var(--border-hover)";
-        e.currentTarget.style.boxShadow = "var(--shadow-card)";
-      }}
+      onMouseLeave={onMouseLeave}
       className="tilt-card group relative overflow-hidden rounded-[14px] border p-8 backdrop-blur-[12px] transition-all duration-400 flex flex-col no-underline"
       style={{
         background: "var(--bg-card)",
@@ -72,15 +64,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
 export function ProjectCardPlaceholder() {
   return (
     <div
-      className="rounded-[14px] border-dashed border p-8 flex flex-col items-center justify-center text-center min-h-[240px] transition-all duration-300 hover:border-[var(--accent)]"
+      className="rounded-[14px] border-dashed border p-8 flex flex-col items-center justify-center text-center min-h-[240px] transition-all duration-300 hover:border-[var(--accent)] hover:bg-[var(--accent-subtle)]"
       style={{
         borderColor: "var(--border)",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.background = "var(--accent-subtle)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.background = "transparent";
       }}
     >
       <div

@@ -13,19 +13,11 @@ export function ExpertiseCard({ skill }: ExpertiseCardProps) {
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
       onMouseMove={onMouseMove}
-      onMouseLeave={(e) => {
-        onMouseLeave();
-        e.currentTarget.style.borderColor = "var(--border)";
-        e.currentTarget.style.boxShadow = "none";
-      }}
+      onMouseLeave={onMouseLeave}
       className="tilt-card group relative overflow-hidden rounded-[14px] border p-8 backdrop-blur-[12px] transition-all duration-400"
       style={{
         background: "var(--bg-card)",
         borderColor: "var(--border)",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "var(--border-hover)";
-        e.currentTarget.style.boxShadow = "var(--shadow-card)";
       }}
     >
       {/* Top accent line */}
@@ -43,27 +35,11 @@ export function ExpertiseCard({ skill }: ExpertiseCardProps) {
       />
 
       <div
-        className="w-12 h-12 flex items-center justify-center rounded-xl border mb-5 transition-all duration-300 group-hover:text-white relative z-[1]"
+        className="w-12 h-12 flex items-center justify-center rounded-xl border mb-5 transition-all duration-300 relative z-[1] group-hover:text-white group-hover:shadow-[0_4px_20px_var(--accent-glow)]"
         style={{
           background: "var(--accent-subtle)",
           borderColor: "var(--border)",
           color: "var(--accent)",
-        }}
-        ref={(el) => {
-          if (!el) return;
-          const parent = el.closest(".group");
-          parent?.addEventListener("mouseenter", () => {
-            el.style.background = "var(--accent)";
-            el.style.color = "white";
-            el.style.borderColor = "var(--accent)";
-            el.style.boxShadow = "0 4px 20px var(--accent-glow)";
-          });
-          parent?.addEventListener("mouseleave", () => {
-            el.style.background = "var(--accent-subtle)";
-            el.style.color = "var(--accent)";
-            el.style.borderColor = "var(--border)";
-            el.style.boxShadow = "none";
-          });
         }}
       >
         <Icon name={skill.iconName} size={24} strokeWidth={1.5} />

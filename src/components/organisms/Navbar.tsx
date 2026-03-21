@@ -145,13 +145,9 @@ export function Navbar() {
             menuOpen ? "max-md:right-0" : "max-md:right-[-100%]"
           )}
           style={{
-            // Mobile overlay background
-            ...(typeof window !== "undefined" && window.innerWidth < 768
-              ? {
-                  background: "var(--bg-elevated)",
-                  borderColor: "var(--border)",
-                }
-              : {}),
+            // @ts-expect-error CSS custom properties
+            "--mobile-bg": "var(--bg-elevated)",
+            "--mobile-border": "var(--border)",
           }}
         >
           {navItems.map((item) => {

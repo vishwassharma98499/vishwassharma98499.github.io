@@ -8,18 +8,10 @@ interface TimelineProjectBlockProps {
 export function TimelineProjectBlock({ project }: TimelineProjectBlockProps) {
   return (
     <div
-      className="rounded-xl border p-6 mb-4 last:mb-0 transition-all duration-300"
+      className="hover-card hover-bg rounded-xl border p-6 mb-4 last:mb-0 transition-all duration-300"
       style={{
         background: "var(--bg-card)",
         borderColor: "var(--border)",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "var(--border-hover)";
-        e.currentTarget.style.background = "var(--bg-card-hover)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = "var(--border)";
-        e.currentTarget.style.background = "var(--bg-card)";
       }}
     >
       <h4 className="text-[0.95rem] font-semibold mb-2">{project.title}</h4>

@@ -9,7 +9,7 @@ export function ThemeToggle({ className = "" }: ThemeToggleProps) {
 
   return (
     <div
-      className={`relative w-[52px] h-7 rounded-[14px] border cursor-pointer flex items-center px-[3px] flex-shrink-0 transition-all duration-300 ${className}`}
+      className={`hover-accent relative w-[52px] h-7 rounded-[14px] border cursor-pointer flex items-center px-[3px] flex-shrink-0 transition-all duration-300 ${className}`}
       style={{
         background: "var(--toggle-bg)",
         borderColor: "var(--border)",
@@ -23,14 +23,6 @@ export function ThemeToggle({ className = "" }: ThemeToggleProps) {
           e.preventDefault();
           toggleTheme();
         }
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "var(--accent)";
-        e.currentTarget.style.boxShadow = "0 0 20px var(--accent-glow)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = "var(--border)";
-        e.currentTarget.style.boxShadow = "none";
       }}
     >
       <span

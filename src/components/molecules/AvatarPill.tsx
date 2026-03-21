@@ -11,21 +11,13 @@ export function AvatarPill({ info }: AvatarPillProps) {
 
   return (
     <div
-      className="inline-flex items-center gap-3 rounded-full px-4 py-1.5 pl-1.5 backdrop-blur-md border transition-all duration-400 cursor-pointer hover:-translate-y-0.5"
+      className="hover-accent inline-flex items-center gap-3 rounded-full px-4 py-1.5 pl-1.5 backdrop-blur-md border transition-all duration-400 cursor-pointer hover:-translate-y-0.5"
       style={{
         background: "var(--bg-card)",
         borderColor: "var(--border)",
       }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "var(--accent)";
-        e.currentTarget.style.boxShadow = "0 4px 24px var(--accent-glow)";
-        setShowLarge(true);
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = "var(--border)";
-        e.currentTarget.style.boxShadow = "none";
-        setShowLarge(false);
-      }}
+      onMouseEnter={() => setShowLarge(true)}
+      onMouseLeave={() => setShowLarge(false)}
     >
       {/* Avatar thumbnail */}
       <div className="relative">

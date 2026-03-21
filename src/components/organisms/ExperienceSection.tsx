@@ -36,15 +36,7 @@ function TimelineCard({ entry, isFirst }: { entry: TimelineEntry; isFirst: boole
       <div
         ref={ref as React.RefObject<HTMLDivElement>}
         onMouseMove={onMouseMove}
-        onMouseLeave={(e) => {
-          onMouseLeave();
-          e.currentTarget.style.borderColor = "var(--border)";
-          e.currentTarget.style.boxShadow = "none";
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.borderColor = "var(--border-hover)";
-          e.currentTarget.style.boxShadow = "var(--shadow-card)";
-        }}
+        onMouseLeave={onMouseLeave}
         className="tilt-card rounded-[14px] border p-8 backdrop-blur-[12px] transition-all duration-400"
         style={{
           background: "var(--bg-card)",
